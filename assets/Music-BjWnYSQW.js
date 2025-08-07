@@ -1,0 +1,1 @@
+import{j as s}from"./index-B3o_hlVx.js";const i=()=>s.jsxs("div",{className:"",children:[s.jsx("div",{className:"flex justify-end",children:s.jsx("img",{src:"music_band.png",alt:""})}),s.jsx("img",{src:"music.png",alt:"",className:"w-2/3"})]});export{i as default};
