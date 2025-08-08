@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const Home = lazy(()=>import("./pages/Home"))
@@ -11,6 +12,7 @@ const AppRouter = () => {
   return (
     <>
       <Suspense>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="life" element={<Life />} />

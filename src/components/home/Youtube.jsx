@@ -18,7 +18,7 @@ const bounceTransition = {
 const appIcons = [
   {
     src: "facebook.png",
-    style: "bottom-64 -left-16",
+    style: "bottom-64 sm:-left-16",
     url: "https://www.facebook.com/mentor.mahesh",
   },
   {
@@ -33,14 +33,14 @@ const appIcons = [
   },
   {
     src: "linkedin.png",
-    style: "bottom-56 -right-20",
+    style: "bottom-56 right-0 sm:-right-20",
     url: "https://www.linkedin.com/in/metalmahesh/",
   },
 ];
 
 const Youtube = () => {
   return (
-    <div className="flex flex-col items-center justify-center space-y-8 pt-20">
+    <div className="flex flex-col items-center justify-center space-y-8 pt-20 overflow-hidden ">
       <h1
         className="text-5xl font-semibold"
         style={{ fontFamily: "Impact, sans-serif" }}
@@ -55,7 +55,7 @@ const Youtube = () => {
           <FirstStick />
         </div>
         <a href="https://www.youtube.com/@maheshmentor5946/featured">
-          <motion.img src="youtube.png" alt="YouTube" />
+          <motion.img src="youtube.png" alt="YouTube" className=""/>
         </a>
 
         <div className="flex justify-between">
@@ -64,13 +64,17 @@ const Youtube = () => {
         </div>
       </div>
 
-      <div className="relative -mt-20">
-        <img src="find.png" alt="Find" className="w-[620px]" />
+      <div className="relative -mt-20 ">
+        <img src="find.png" alt="Find" className="w-[620px] " />
 
         {appIcons.map((icon, index) => (
-          <a href={icon.url} target="_blank" rel="noopener noreferrer">
+          <a
+            href={icon.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={index}
+          >
             <motion.img
-              key={index}
               src={icon.src}
               alt=""
               className={`absolute ${icon.style}`}

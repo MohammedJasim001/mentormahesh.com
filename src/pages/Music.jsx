@@ -1,10 +1,15 @@
+import BackButton from "../components/BackButton.jsx";
+import Musicions from "../components/music/Musicions.jsx";
+import MusicTop from "../components/music/MusicTop";
+import VinylCollections from "../components/music/VinylCollections.jsx";
+
 const Music = () => {
   return (
-    <div className="">
-      <div className="flex justify-end">
-        <img src="music_band.png" alt="" />
-      </div>
-        <img src="music.png" alt="" className="w-2/3"/>
+    <div className="py-10 pt-0 ">
+      <BackButton/>
+      <MusicTop/>
+      <Musicions/>
+      <VinylCollections/>
     </div>
   );
 };

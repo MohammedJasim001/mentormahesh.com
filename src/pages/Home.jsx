@@ -5,7 +5,7 @@ import Youtube from "../components/home/Youtube"
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <HomeTop/>
       <Nav/>
       <Youtube/>

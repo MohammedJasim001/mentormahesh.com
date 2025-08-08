@@ -1,38 +1,45 @@
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Nav = () => {
-  const NavItems = [{image:"life.png",url:"life"}, {image:"work.png",url:"work"}, {image:"music.png",url:"music"}];
-  const [activeIndex, setActiveIndex] = useState(0);
-  const navigate = useNavigate()
-  const handleClick = (url,ind) => {
-     setActiveIndex(ind)
-     navigate(url)
-  }
+  const NavItems = [
+    { image: "life.png", url: "life" },
+    { image: "work.png", url: "work" },
+    { image: "music.png", url: "music" },
+  ];
+
+  const navigate = useNavigate();
+
+  const handleClick = (url) => {
+    navigate(url);
+  };
 
   return (
-    <div className="relative">
-      {/* Butterfly image positioned above active nav item */}
-      <div className="absolute -top-16 left-0 w-full flex justify-around px-40 pointer-events-none">
-        {NavItems.map((_, i) => (
-          <div key={i} className="w-80 flex justify-center" >
-            {i === activeIndex && (
-              <img src="butterfly.png" alt="Butterfly" className="w-36 h-36" />
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Nav items */}
-      <div className="flex justify-around px-40 h-36 items-center">
+    <div className="">
+      <div className="flex gap-2 justify-around px-2 md:px-5 lg:px-40 h-36 items-center mt-10  rounded-xl ">
         {NavItems.map((ele, ind) => (
-          <div
+          
+          <motion.div
             key={ind}
-            className="w-80 cursor-pointer"
-            onClick={()=>handleClick(ele.url,ind)}
+            className={`sm:w-80 w-40 cursor-pointer bg-amber-400 h-10 sm:h-20 lg:h-28 rounded-2xl flex items-center justify-center ${ele.url =="music" && " sm:mt-1 mr-2"} ${ele.url == "work" && "pr-4"}`}
+            onClick={() => handleClick(ele.url)}
+            initial={{ opacity: 0, scale: 0.5, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: ind * 0.15, 
+              type: "spring",
+              stiffness: 200,
+            }}
+            whileHover={{
+              scale: 1.15,
+              rotate: [0, -5, 5, -5, 0], 
+              transition: { duration: 0.4 },
+            }}
+            whileTap={{ scale: 0.9 }}
           >
-            <img src={ele.image} alt={`nav-${ind}`} />
-          </div>
+            <img src={ele.image} alt={`nav-${ind}`} className="" />
+          </motion.div>
         ))}
       </div>
     </div>
