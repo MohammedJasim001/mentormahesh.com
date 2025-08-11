@@ -42,7 +42,7 @@ const Youtube = () => {
   return (
     <div className="flex flex-col items-center justify-center space-y-8 pt-20 overflow-hidden ">
       <h1
-        className="text-5xl font-semibold"
+        className="text-2xl md:text-5xl font-semibold"
         style={{ fontFamily: "Impact, sans-serif" }}
       >
         Check out my YouTube channel
@@ -77,7 +77,7 @@ const Youtube = () => {
             <motion.img
               src={icon.src}
               alt=""
-              className={`absolute ${icon.style}`}
+              className={`absolute ${icon.style} `}
               animate={{ y: [0, -5] }}
               transition={bounceTransition}
               whileHover={{

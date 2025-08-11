@@ -8,6 +8,14 @@ const Home = () => {
     <div className="">
       <HomeTop/>
       <Nav/>
+      <video
+        className=" block lg:hidden mt-5 w-full lg:h-screen object-cover "
+        src="YOUTUBE_INTRO.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
       <Youtube/>
     </div>
     

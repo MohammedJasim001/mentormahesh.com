@@ -12,7 +12,7 @@ const Musicions = () => {
           style={{ backgroundColor: data.bg }}
         >
           <img src={data.image} alt="" className=" object-cover h-full" />
-          <div className="flex flex-col justify-center lg:px-32 w-full py-4 lg:py-0 ml-5 lg:ml-0">
+          <div className="flex flex-col justify-center lg:px-32 w-full py-4 lg:py-0 pl-3  ">
             <div className="text-3xl lg:text-6xl font-bold sm:mb-4 ">{data.text1}</div>
             {data.text2 ? (
               <div className="text-2xl lg:text-4xl font-bold ">{data.text2}</div>

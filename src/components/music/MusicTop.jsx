@@ -1,10 +1,10 @@
 
 const MusicTop = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center md:px-12 lg:px-32 justify-between mt-7">
+    <div className="flex flex-col lg:flex-row items-center md:px-12 lg:px-32 justify-between mt-7 ">
       <div className=" lg:space-y-10">
         <img src="music.png" alt="" className="w-96" />
-        <img src="music_band.png" alt="" className="lg:w-[500px] block lg:hidden" />
+        <img src="music_band.png" alt="" className=" block lg:hidden" />
         <div className="lg:hidden flex justify-between ">
           <img src="icon1.png" alt="" className="w-36" />
           <img src="90s.png" alt="" className="w-36" />

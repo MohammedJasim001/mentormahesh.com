@@ -9,7 +9,7 @@ const Life = () => {
       <div className="lg:flex justify-betweenj mt-5">
         <div className="">
           <img src="life.png" alt="" className="" />
-          <p className="text-3xl px-2 sm:pl-20 sm:px-16 sm:text-center font-imprima">
+          <p className="text-lg sm:text-3xl px-2 sm:pl-20 sm:px-16 sm:text-center font-imprima">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

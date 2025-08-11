@@ -1,57 +1,48 @@
 import BackButton from "../components/BackButton";
+import BrandsCreated from "../components/work/BrandsCreated";
 import { BRANDS } from "../constant/BrandsCreated";
 
 const Work = () => {
   return (
-    <div className="sm:p-8 p-2 sm:pl-32 mt-8 sm:mt-5 lg:mt-0">
+    <div className="sm:p-8 p-2  mt-8 ">
       <BackButton />
-      <img src="work.png" alt="" className="w-2/3" />
-      <div className="lg:flex items-start lg:-space-x-28">
-        <p className="sm:w-xl text-xl sm:text-3xl font-imprima sm:text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+      <div className="lg:flex lg: lg:space-x-10 ">
+        <div className="lg:w-1/2 lg:space-y-6 ">
+          <img src="work.png" alt="" className="w-96 " />
+          <div className="space-y-6 lg:space-y-12 lg:px-10">
+            <p className="text-lg font-bold sm:text-2xl font-imprima">
+              I began my career in sales. Leveraging my expertise in scouting
+              talent, I then shifted to the dynamic industry of Recruiting.
+              Having met over 40,000 candidates and hired hundreds of them, I
+              learnt the recruitment industry in and out.
+            </p>
 
-        <img
-          src="workimage.png"
-          alt="work"
-          className="lg:w-[800px] h-auto object-contain lg:mt-40"
-        />
-      </div>
+            <img
+            src="workimage.png"
+            alt=""
+            className="w-96 mx-auto block lg:hidden"
+          />
 
-      <p className="text-xl sm:text-3xl font-imprima sm:w-xl sm:text-center lg:-mt-96">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <div className="flex flex-col">
-        {BRANDS.map((ele, ind) => (
-          <div
-            key={ind}
-            className={`flex  ${
-              ind % 2 === 0 ? "justify-end" : "justify-start"
-            }`}
-          >
-            <div className=" space-y-5 max-w-xl ">
-              <a href={ele.url} target="_blank" rel="noopener noreferrer">
-                <img src={ele.image} alt="" className=" w-xl h-40" />
-              </a>
-              <p className="text-xl sm:text-3xl sm:text-center font-imprima">
-                {ele.description}
-              </p>
-            </div>
+            <p className="text-lg font-bold sm:text-2xl font-imprima">
+              Hiring for top management can be tricky. Those making the hiring
+              decisions don't have ample time to go through an entire resume.
+              Those applying, i.e. the ultra-accomplished corporate executives,
+              do not know how to correctly leverage their experience and
+              achievements.
+            </p>
           </div>
-        ))}
+        </div>
+
+        <div className="lg:w-1/2 hidden lg:flex justify-center ">
+          <img
+            src="workimage.png"
+            alt="work"
+            className="w-full max-w-[800px] h-auto  object-contain"
+          />
+        </div>
       </div>
+
+      <BrandsCreated />
     </div>
   );
 };

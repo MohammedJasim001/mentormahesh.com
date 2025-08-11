@@ -3,7 +3,9 @@ body {
   padding: 0;
   background-color: #FFFDE7;
 }
-
+.press-start {
+  font-family: 'Press Start 2P', cursive;
+}
 .font-impact {
   font-family: Impact, Charcoal, sans-serif;
 }

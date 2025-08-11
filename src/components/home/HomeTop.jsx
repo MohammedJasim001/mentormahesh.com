@@ -20,22 +20,22 @@ const HomeTop = () => {
   return (
     <div className=" ">
       <video
-        className=" w-full lg:h-screen object-cover "
+        className=" hidden lg:block w-full lg:h-screen object-cover "
         src="YOUTUBE_INTRO.mp4"
         autoPlay
         loop
         muted
         playsInline
       />
-      <div className="flex items-center justify-center overflow-hidden">
-        <div className=" h-[450px] flex flex-col justify-between lg:mt-72 ">
+      <div className="flex items-center justify-center overflow-hidden -mt-10 sm:-mt-0">
+        <div className=" h-[450px] flex flex-col justify-between lg:mt-72">
           <div className="relative w-32 h-32 lg:w-40 lg:h-40">
             {music1.map((src, index) => (
               <img
                 key={index}
                 src={src}
                 alt={`music1 ${index + 1}`}
-                className={`absolute left-32 lg:left-0 w-full h-full 
+                className={`absolute top-32 lg:top-0 left-32 lg:left-0 w-full h-full 
         ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
       `}
               />
@@ -47,7 +47,7 @@ const HomeTop = () => {
                 key={index}
                 src={src}
                 alt={`music2 ${index + 1}`}
-                className={`absolute w-full bottom-10 lg:bottom-0 h-full left-32 top-32 lg:top-0 lg:left-44 
+                className={`absolute w-full lg:bottom-0 h-full left-32 top-24 lg:top-0 lg:left-44 
         ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
       `}
               />
@@ -70,9 +70,9 @@ const HomeTop = () => {
           </div>
 
           <div className="mt-5 z-20">
-            <img src="image.png" alt="" className="" />
+            <img src="image.png" alt="" className="w-56 md:w-full" />
           </div>
-          <div className="relative w-[400px] h-[150px] sm:w-[600px] sm:h-[250px] ">
+          <div className="relative w-[350px] h-[130px] sm:w-[600px] sm:h-[250px] ">
             {images.map((src, index) => (
               <img
                 key={index}
@@ -104,7 +104,7 @@ const HomeTop = () => {
                 key={index}
                 src={src}
                 alt={`music2 ${index + 1}`}
-                className={`absolute right-28 bottom-36 md:-left-10 lg:left-0 w-full h-full 
+                className={`absolute right-20 bottom-36 md:-left-10 lg:left-0 w-full h-full 
         ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
       `}
               />

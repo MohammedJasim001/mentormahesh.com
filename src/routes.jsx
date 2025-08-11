@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 
 
 const Home = lazy(()=>import("./pages/Home"))
@@ -20,6 +21,7 @@ const AppRouter = () => {
           <Route path="music" element={<Music />} />
         </Routes>
       </Suspense>
+      <Footer/>
     </>
   );
 };
