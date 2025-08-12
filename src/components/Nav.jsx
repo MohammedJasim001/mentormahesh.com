@@ -1,56 +1,88 @@
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Nav = () => {
-  const NavItems = [
-    { image: "life.png", url: "life" },
-    { image: "work.png", url: "work" },
-    { image: "music.png", url: "music" },
-  ];
+  const [isOpen, setIsOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  const navigate = useNavigate();
-
-  const handleClick = (url) => {
-    navigate(url);
+  const toggleMenu = () => {
+    setIsOpen((prev) => {
+      const newState = !prev;
+      if (newState) setShowNav(true);
+      return newState;
+    });
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) return;
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowNav(false);
+      } else {
+        setShowNav(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen, lastScrollY]);
+
   return (
-    <div className="mt-5 lg:mt-10 px-2 md:px-5 lg:px-40">
-      {/* <p className="text-lg sm:text-2xl font-semibold">
-        Click to know more about my:
-      </p> */}
-      <div className="flex gap-2 justify-around  sm:h-36 items-center  rounded-xl mt-2">
-        {NavItems.map((ele, ind) => (
-          <div className="sm:w-80 w-40 flex flex-col items-center justify-center" key={ind}>
-            <motion.div
-              title={`Go to ${ele.url} page`}
-              
-              className={` cursor-pointer bg-amber-400 h-10 sm:h-20 lg:h-28 rounded-2xl flex items-center justify-center ${
-                ele.url == "music" && " sm:mt-1 mr-2"
-              } ${ele.url == "work" && "pr-4"}`}
-              onClick={() => handleClick(ele.url)}
-              initial={{ opacity: 0, scale: 0.5, y: -20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: ind * 0.15,
-                type: "spring",
-                stiffness: 200,
-              }}
-              whileHover={{
-                scale: 1.15,
-                rotate: [0, -5, 5, -5, 0],
-                transition: { duration: 0.4 },
-              }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <img src={ele.image} alt={`nav-${ind}`} className="" />
-            </motion.div>
-            <p className="text-xs md:text-xl font-bold">My {ele.url}{ele.url == "music" && "'s"}</p>
+    <nav
+      className={`top-0 sticky w-full bg-[#FFFDE7] shadow-md z-50 transition-transform duration-300 ${
+        showNav ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div></div>
+
+          <div className="hidden md:flex space-x-8 text-lg font-semibold">
+            <a href="/" className="hover:text-orange-500 transition">
+              Home
+            </a>
+            <a href="#work" className="hover:text-orange-500 transition">
+              Work
+            </a>
+            <a href="#life" className="hover:text-orange-500 transition">
+              Life
+            </a>
+            <a href="#music" className="hover:text-orange-500 transition">
+              Music
+            </a>
+            <a href="#contact" className="hover:text-orange-500 transition">
+              Contact
+            </a>
           </div>
-        ))}
+
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-2xl">
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+
+      {isOpen && (
+        <div className="md:hidden bg-[#FFFDE7] border-t border-gray-200">
+          {["home", "work", "life", "music", "contact"].map((item) => (
+            <a
+              key={item}
+              href={`#${item}`}
+              className="block px-4 py-2 hover:bg-gray-100"
+              onClick={toggleMenu}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 };
 

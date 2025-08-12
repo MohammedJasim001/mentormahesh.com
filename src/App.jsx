@@ -1,11 +1,35 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import AppRouter from "./routes";
+import Home from "./pages/Home";
+import Life from "./pages/Life";
+import Music from "./pages/Music";
+import Work from "./pages/Work";
+import Youtube from "./components/home/Youtube";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import Services from "./pages/Services";
+// import AppRouter from "./routes";
 
 function App() {
   return (
     <BrowserRouter>
-      <AppRouter />
+      {/* <AppRouter /> */}
+      <video
+        className=" hidden lg:block w-full lg:h-screen object-cover "
+        src="YOUTUBE_INTRO.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      <Nav />
+      <Home />
+      <Work />
+      <Life />
+      <Music />
+      <Youtube />
+      <Services/>
+      <Footer />
     </BrowserRouter>
   );
 }

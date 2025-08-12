@@ -34,7 +34,7 @@ const Footer = () => {
       );
   };
   return (
-    <div>
+    <div className="pt-14">
       <div className="lg:flex mt-10 lg:px-16 lg:space-x-20">
         <div className="lg:w-1/2 space-y-5 lg:px-10 px-5">
           <h1 className="text-[#FF7438] text-2xl lg:text-4xl press-start">
@@ -117,7 +117,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center space-x-2">
               <MdLocationOn className="text-[#FF7438] text-2xl" />
-              <p className="font-bold">Amarjyoti layout Domlur, Bangaluru</p>
+              <p className="font-bold">Bangaluru, India</p>
             </div>
           </div>
         </div>

@@ -5,10 +5,10 @@ const BrandsCreated = () => {
     <div className="mt-10">
       <div className="lg:flex justify-around ">
         <div className="mt-10 lg:ml-5 max-w-[530px] space-y-4 ">
-          <h1 className=" text-2xl md:text-5xl lg:text-6xl text-[#FF7438] font-bold ">
+          <h1 className=" text-3xl md:text-5xl lg:text-6xl text-[#FF7438] font-bold ">
             BRANDS I HAVE CREATED!
           </h1>
-          <p className="text-lg md:text-2xl font-semibold font-imprima">
+          <p className="text-lg md:text-xl font-semibold font-imprima">
             Having had the privilege of pitching to top CEO’s, interviewing
             multiple “C - Level “ executives, I noticed a gap… A big gap. The
             paucity of time.

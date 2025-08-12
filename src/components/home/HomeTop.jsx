@@ -18,98 +18,102 @@ const HomeTop = () => {
   }, []);
 
   return (
-    <div className=" ">
-      <video
-        className=" hidden lg:block w-full lg:h-screen object-cover "
-        src="YOUTUBE_INTRO.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-      <div className="flex items-center justify-center overflow-hidden -mt-10 sm:-mt-0">
-        <div className=" h-[450px] flex flex-col justify-between lg:mt-72">
-          <div className="relative w-32 h-32 lg:w-40 lg:h-40">
-            {music1.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`music1 ${index + 1}`}
-                className={`absolute top-32 lg:top-0 left-32 lg:left-0 w-full h-full 
+    <div className=" " id="/">
+      <div className=" lg:flex items-center justify-center -mt-10 sm:-mt-0 space-x-5 space-y-5">
+        <div className=" flex items-center justify-center overflow-hidden ">
+          <div className=" h-[450px] flex flex-col justify-between lg:pt-20 ">
+            <div className="relative w-32 h-32 ">
+              {music1.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`music1 ${index + 1}`}
+                  className={`absolute top-32 lg:top-0 left-32 lg:left-10 w-full h-full 
         ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
       `}
-              />
-            ))}
-          </div>
-          <div className="relative w-20 h-20">
-            {music2Rotate.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`music2 ${index + 1}`}
-                className={`absolute w-full lg:bottom-0 h-full left-32 top-24 lg:top-0 lg:left-44 
+                />
+              ))}
+            </div>
+            <div className="relative w-16 h-16">
+              {music2Rotate.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`music2 ${index + 1}`}
+                  className={`absolute w-full top-16 lg:top-24 h-full left-32 
         ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
       `}
-              />
-            ))}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-center -space-y-5 sm:-space-y-8 ">
-          <div className="relative w-40 h-40">
-            {bulb.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`bulb ${index + 1}`}
-                className={`absolute left-0 w-full h-full 
+          <div className="flex flex-col items-center -space-y-5 sm:-space-y-6 ">
+            <div className="relative w-32 h-32">
+              {bulb.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`bulb ${index + 1}`}
+                  className={`absolute left-0 w-full h-full 
         ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
         ${index === 0 ? "mt-2" : "mt-0"}
       `}
-              />
-            ))}
-          </div>
+                />
+              ))}
+            </div>
 
-          <div className="mt-5 z-20">
-            <img src="image.png" alt="" className="w-56 md:w-full" />
+            <div className="mt-5 z-20">
+              <img src="image.png" alt="" className="w-56 md:w-full" />
+            </div>
+            <div className="relative w-[350px] h-[130px] sm:w-[450px] sm:h-[180px] ">
+              {images.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`mentor ${index + 1}`}
+                  className={`absolute left-0 w-full h-full   ${
+                    index === currentImage ? " z-10" : "opacity-0 z-0"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
-          <div className="relative w-[350px] h-[130px] sm:w-[600px] sm:h-[250px] ">
-            {images.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`mentor ${index + 1}`}
-                className={`absolute left-0 w-full h-full   ${
-                  index === currentImage ? " z-10" : "opacity-0 z-0"
-                }`}
-              />
-            ))}
+          <div className="h-[450px] flex flex-col justify-between mt-52 ">
+            <div className="relative w-16 h-16">
+              {music1Rotate.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`music1 ${index + 1}`}
+                  className={`absolute w-full h-full right-24
+        ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
+      `}
+                />
+              ))}
+            </div>
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 ">
+              {music2.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`music2 ${index + 1}`}
+                  className={`absolute right-20 bottom-36 md:-left-10 lg:left-0 w-full h-full 
+        ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
+      `}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        <div className="h-[450px] flex flex-col justify-between mt-52">
-          <div className="relative w-20 h-20">
-            {music1Rotate.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`music1 ${index + 1}`}
-                className={`absolute w-full h-full right-24
-        ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
-      `}
-              />
-            ))}
+        <div className=" flex flex-col justify-center -mt-10 lg:-mt-0 space-y-5 px-4">
+          <div className="text-[#FF7438]">
+            <h3 className="text-2xl lg:text-4xl font-semibold">Hello, I'm</h3>
+            <h1 className="text-5xl lg:text-8xl font-bold ">Mahesh</h1>
           </div>
-          <div className="relative w-28 h-28 sm:w-40 sm:h-40">
-            {music2.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`music2 ${index + 1}`}
-                className={`absolute right-20 bottom-36 md:-left-10 lg:left-0 w-full h-full 
-        ${index === currentImage ? "z-10 opacity-100" : "opacity-0 z-0"}
-      `}
-              />
-            ))}
-          </div>
+          <p className="text-xl lg:text-2xl font-imprima font-bold w-xs md:w-md">
+            I have always been fascinated with people, the human psyche and
+            interpersonal dynamics & my early influences to music..
+          </p>
         </div>
       </div>
     </div>

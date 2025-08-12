@@ -5,8 +5,8 @@ import VinylCollections from "../components/music/VinylCollections.jsx";
 
 const Music = () => {
   return (
-    <div className="py-10 pt-0 ">
-      <BackButton/>
+    <div className="py-10 pt-10 " id="music">
+      {/* <BackButton/> */}
       <MusicTop/>
       <Musicions/>
       <VinylCollections/>

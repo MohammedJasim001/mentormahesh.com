@@ -14,7 +14,7 @@ export const MUSIC = [
     {
         image:"music_images/img3.jpeg",
         text1:"ROGER WATERS",
-        text2:"of Pink Flyod",
+        text2:"of Pink Floyd",
         bg:"#FF8855"
     },
     {
