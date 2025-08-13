@@ -58,7 +58,7 @@ const Work = () => {
       >
         BRANDS I HAVE CREATED!
       </motion.h1>
-
+  
       <Brands />
     </div>
   );
