@@ -3,11 +3,11 @@ import "./App.css";
 import Home from "./pages/Home";
 import Life from "./pages/Life";
 import Music from "./pages/Music";
-import Work from "./pages/Work";
 import Youtube from "./components/home/Youtube";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Services from "./pages/Services";
+import Work from "./pages/work";
 // import AppRouter from "./routes";
 
 function App() {
@@ -24,10 +24,10 @@ function App() {
       />
       <Nav />
       <Home />
+      <Youtube />
       <Work />
       <Life />
       <Music />
-      <Youtube />
       <Services/>
       <Footer />
     </BrowserRouter>

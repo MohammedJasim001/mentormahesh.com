@@ -9,7 +9,7 @@ const Connect = () => {
     setExpandedIndex((prev) => (prev === index ? null : index));
   };
   return (
-    <div>
+    <div id="contact">
       <div className="h-24 lg:h-32 flex items-center justify-center bg-white text-center">
         <h1 className="text-3xl lg:text-6xl font-bold text-[#FF7438]">
           CONNECT WITH ME FOR

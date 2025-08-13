@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BRANDS } from "../../constant/BrandsCreated";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import {motion} from 'framer-motion'
 
 const Brands = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -10,12 +11,16 @@ const Brands = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-5 mt-10 md:mt-20 items-center justify-center lg:px-24">
+    <div className="flex flex-col space-y-5 mt-10 items-center justify-center lg:px-24">
       {BRANDS.map((ele, ind) => (
-        <div
+         <motion.div
           key={ind}
-          className="w-full rounded-xl border border-gray-300 shadow-sm"
+          className="w-full rounded-xl border border-gray-300 shadow-sm overflow-hidden"
           style={{ backgroundColor: ele.bg }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <div
             className={`flex ${
@@ -62,7 +67,7 @@ const Brands = () => {
               </div>
             </div>
           )}
-        </div>
+        </motion.div>
       ))}
     </div>
   );

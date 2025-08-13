@@ -7,8 +7,8 @@ export const MUSIC = [
     },
     {
         image:"music_images/img5.jpeg",
-        text1:"JANIK GERS",
-        text2:"of Iron Maiden",
+        text1:"JOHN MCLAUGHLIN",
+        text2:"of Mahavishnu Orchestra",
         bg:"#F2FF75"
     },
     {

@@ -5,7 +5,7 @@ import Connect from '../components/services/Connect'
 const Services = () => {
   return (
     <div>
-        <ServicesTop/>
+        {/* <ServicesTop/> */}
         <Connect/>
     </div>
   )

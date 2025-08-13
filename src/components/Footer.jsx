@@ -17,14 +17,14 @@ const Footer = () => {
 
     emailjs
       .sendForm(
-        "service_c3jljia",
-        "template_mrm3h3f",
+        "service_bypx0hd",
+        "template_bs12qns",
         form.current,
-        "MQrv68Q8keZ9xOVuX"
+        "xl785f1tuKrt5Pac3"
       )
       .then(
         (result) => {
-            console.log(result)
+          console.log(result);
           alert("✅ Message sent successfully!");
           form.current.reset();
         },
@@ -37,7 +37,7 @@ const Footer = () => {
     <div className="pt-14">
       <div className="lg:flex mt-10 lg:px-16 lg:space-x-20">
         <div className="lg:w-1/2 space-y-5 lg:px-10 px-5">
-          <h1 className="text-[#FF7438] text-2xl lg:text-4xl press-start">
+          <h1 className="text-[#FF7438] text-4xl lg:text-6xl font-bold">
             GET IN TOUCH WITH ME
           </h1>
           <p className="font-imprima text-xl font-semibold">
@@ -76,8 +76,8 @@ const Footer = () => {
                 Email
               </label>
               <input
-                id="email"
-                name="from_email"
+                id="from_name"
+                name="from_name"
                 type="email"
                 required
                 placeholder="Your Email"
@@ -97,6 +97,7 @@ const Footer = () => {
                 required
                 className="border border-black rounded-lg p-3 resize-none focus:outline-none focus:border-[#FF7438] focus:ring-1 focus:ring-[#FF7438]"
               ></textarea>
+              <input type="hidden" name="to_name" value="Mahesh" />
             </div>
 
             <button

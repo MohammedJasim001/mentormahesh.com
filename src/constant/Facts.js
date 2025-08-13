@@ -1,0 +1,22 @@
+export const FACTS = [
+  "Passionate about music since the age of 10.",
+  "Inspired by legendary albums from Pink Floyd, Iron Maiden, and Scorpions.",
+  "Collector of rare vinyl records from across the globe.",
+  "Proud owner of a curated collection of over 15 vintage radios.",
+  "Enthusiast of audio technology with 100+ speakers in collection.",
+  "Possesses an extensive music library of 1,500+ recorded songs.",
+  "Enjoys street photography during musical tours.",
+  "Avid aquarium enthusiast with a love for aquatic life.",
+  "Conducted interviews with over 40,000 candidates throughout career.",
+  "Passionate about connecting with new people and building relationships.",
+  "Dedicated mentor, guiding and inspiring aspiring talents.",
+  "Enjoys watching thriller movies in leisure time.",
+  "Values health and well-being, maintaining an active lifestyle.",
+  "Committed to continuous learning and exploring new ideas.",
+  "Avid reader with a love for diverse genres of books.",
+  "Collector of unique and artistic paintings.",
+  "Firm believer in faith and spirituality.",
+  "Enjoys cooking and experimenting with new recipes.",
+  "Loves spending time at the beach.",
+  "Believes music is “not just sound, but a story.”"
+];

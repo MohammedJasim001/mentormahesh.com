@@ -1,46 +1,65 @@
-import BrandsCreated from "../components/work/BrandsCreated";
+import { motion } from "framer-motion";
+import Brands from "../components/work/Brands";
+import { WORK } from "../constant/Work";
 
 const Work = () => {
   return (
-    <div className="sm:p-8 p-2  pt-12 " id="work">
-      {/* <BackButton /> */}
-      <div className="lg:flex lg: lg:space-x-10 ">
-        <div className="lg:w-1/2 lg:space-y-6 ">
-          <img src="work.png" alt="" className="w-96 " />
-          <div className="space-y-6 lg:space-y-12 lg:px-10">
-            <p className="text-lg font-bold sm:text-xl font-imprima max-w-xl">
-              I began my career in sales. Leveraging my expertise in scouting
-              talent, I then shifted to the dynamic industry of Recruiting.
-              Having met over 40,000 candidates and hired hundreds of them, I
-              learnt the recruitment industry in and out.
-            </p>
+    <div className="sm:p-8 p-2 pt-12 lg:px-20 space-y-10" id="work">
+      <motion.img
+        src="work.png"
+        alt=""
+        className="w-96 "
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        viewport={{ once: false, amount: 0.2 }}
+      />
 
-            <img
-            src="workimage.png"
-            alt=""
-            className="w-96 mx-auto block lg:hidden"
-          />
+      <div className="md:-space-y-20 lg:px-20 ">
+        {WORK.map((ele, ind) => (
+          <motion.div
+            key={ind}
+            className={`flex flex-col sm:flex-row items-center justify-between  p-6 rounded-lg ${
+              ind % 2 !== 0 ? "sm:flex-row-reverse" : ""
+            }`}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            viewport={{ once: false, amount: 0.2 }}
+          >
+            <div className={`flex`}>
+              <img
+                src={ele.img}
+                alt=""
+                className={`rounded-xl shadow-lg ${ele.style}`}
+              />
+            </div>
 
-            <p className="text-lg font-bold sm:text-xl font-imprima max-w-xl">
-              Hiring for top management can be tricky. Those making the hiring
-              decisions don't have ample time to go through an entire resume.
-              Those applying, i.e. the ultra-accomplished corporate executives,
-              do not know how to correctly leverage their experience and
-              achievements.
-            </p>
-          </div>
-        </div>
+            <div className="border-l-2 hidden md:block h-[300px] bg-black"></div>
 
-        <div className="lg:w-1/2 hidden lg:flex justify-center ">
-          <img
-            src="workimage.png"
-            alt="work"
-            className="w-full max-w-[800px] h-auto  object-contain"
-          />
-        </div>
+            <div className="sm:w-1/2 flex items-center justify-center">
+              <p className="text-lg sm:text-xl font-semibold font-imprima">
+                {ele.description}
+              </p>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
-      <BrandsCreated />
+      <motion.h1
+        className=" text-3xl md:text-5xl lg:ml-20 lg:w-xl lg:text-6xl text-[#FF7438] font-bold "
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -30 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+      >
+        BRANDS I HAVE CREATED!
+      </motion.h1>
+
+      <Brands />
     </div>
   );
 };

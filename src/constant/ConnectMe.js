@@ -27,18 +27,18 @@ export const CONNECT_ME = [
     ],
     bg: "#F2FF75",
   },
-  {
-    img: "finance.png",
-    title: "FINANCE — MONEY, SAVINGS, INVEST",
-    description:
-      "Money isn’t just about maths. It’s tied to our self-worth, fears, upbringing, and decisions.",
-    help: "Through mentoring, I guide people to",
-    points: [
-      "Break free from scarcity and fear-based financial habits",
-      "Create systems that serve their lifestyle, not someone else’s",
-      "Learn emotional intelligence around spending, saving, and earning",
-      "Make money a tool for freedom, not pressure",
-    ],
-    bg: "#FF8855",
-  },
+  // {
+  //   img: "finance.png",
+  //   title: "FINANCE — MONEY, SAVINGS, INVEST",
+  //   description:
+  //     "Money isn’t just about maths. It’s tied to our self-worth, fears, upbringing, and decisions.",
+  //   help: "Through mentoring, I guide people to",
+  //   points: [
+  //     "Break free from scarcity and fear-based financial habits",
+  //     "Create systems that serve their lifestyle, not someone else’s",
+  //     "Learn emotional intelligence around spending, saving, and earning",
+  //     "Make money a tool for freedom, not pressure",
+  //   ],
+  //   bg: "#FF8855",
+  // },
 ];
