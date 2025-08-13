@@ -7,7 +7,7 @@ import Youtube from "./components/home/Youtube";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Services from "./pages/Services";
-import Work from "./pages/work";
+import Work from "./pages/Works";
 // import AppRouter from "./routes";
 
 function App() {
