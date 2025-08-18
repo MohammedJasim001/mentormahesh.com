@@ -1,14 +1,13 @@
-import React from 'react'
-import ServicesTop from '../components/services/ServicesTop'
-import Connect from '../components/services/Connect'
+import Connect from "../components/services/Connect";
+import Footer from "../components/Footer";
 
 const Services = () => {
   return (
     <div>
-        {/* <ServicesTop/> */}
-        <Connect/>
+      <Connect />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

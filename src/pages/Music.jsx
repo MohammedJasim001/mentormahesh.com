@@ -1,15 +1,15 @@
-import BackButton from "../components/BackButton.jsx";
-import Musicions from "../components/music/Musicions.jsx";
+
 import MusicTop from "../components/music/MusicTop";
-import VinylCollections from "../components/music/VinylCollections.jsx";
 
 const Music = () => {
   return (
-    <div className="py-10 pt-10 " id="music">
+    <div className="py-10 pt-10 space-y-10" id="music">
       {/* <BackButton/> */}
       <MusicTop/>
-      <Musicions/>
-      <VinylCollections/>
+      
+      
+      {/* <Musicions/>
+      <VinylCollections/> */}
     </div>
   );
 };

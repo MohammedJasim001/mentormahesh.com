@@ -84,8 +84,7 @@ const Youtube = () => {
             <motion.img
               src="youtube.png"
               alt="YouTube"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
+              
             />
           </a>
           <div className="flex justify-between">

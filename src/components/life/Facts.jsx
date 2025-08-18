@@ -1,5 +1,7 @@
 import { FACTS } from "../../constant/Facts";
 import { motion } from "framer-motion";
+import Hobbies from "./Hobbies";
+import BackButton from "../BackButton";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -19,12 +21,13 @@ const itemVariants = {
 const Facts = () => {
   return (
     <motion.div
-      className="lg:px-10 space-y-5"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      className=" px-2 lg:px-10 space-y-5 py-10"
+      
     >
+      <BackButton/>
+      <div className="flex justify-center items-center">
+        <motion.img src="life.png" alt="" className="w-96"  />
+      </div>
       <motion.h1
         className="text-4xl font-bold"
         variants={itemVariants}
@@ -53,6 +56,7 @@ const Facts = () => {
           </motion.div>
         ))}
       </motion.div>
+      <Hobbies/>
     </motion.div>
   );
 };

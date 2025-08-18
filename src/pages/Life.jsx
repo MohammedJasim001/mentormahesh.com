@@ -1,54 +1,40 @@
 import { motion } from "framer-motion";
 import Facts from "../components/life/Facts";
 import Hobbies from "../components/life/Hobbies";
+import KnowMoreButton from "../components/KnowMoreButton";
+import { useNavigate } from "react-router-dom";
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.3 },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
-  },
-};
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1, staggerChildren: 0.15 },
-  },
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
+  transition: { duration: 0.5, ease: "easeInOut" },
 };
 
 const Life = () => {
+  const navigate = useNavigate();
   return (
     <div className="pt-10" id="life">
+      {/* Top Section */}
+      <motion.img src="life.png" alt="" className="w-96" {...fadeInUp} />
       <motion.div
         className="lg:flex justify-around mt-5"
-        variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.05 }} 
+        viewport={{ once: false, amount: 0.05 }}
       >
-        <motion.div variants={container} className="space-y-8">
-          <motion.img
-            src="life.png"
-            alt=""
-            className="w-96 "
-            variants={fadeUp}
-          />
+        <motion.img
+          src="lifeimage.png"
+          alt=""
+          className="w-[600px] mx-auto order-1 lg:order-2 lg:-mt-52"
+          {...fadeInUp}
+        />
 
+        <motion.div className="space-y-8 order-2 lg:order-1">
           <div className="space-y-5 lg:space-y-10 lg:max-w-3xl">
             <motion.p
               className="text-lg sm:text-xl font-semibold px-2 sm:pl-20 sm:px-16 font-imprima"
-              variants={fadeUp}
+              {...fadeInUp}
             >
               My life isn’t a straight line — it’s a collection of little
               adventures, quiet mornings, and unexpected turns. I find joy in
@@ -60,7 +46,7 @@ const Life = () => {
 
             <motion.p
               className="text-lg sm:text-xl font-semibold px-2 sm:pl-20 sm:px-16 font-imprima"
-              variants={fadeUp}
+              {...fadeInUp}
             >
               I value building strong connections — with colleagues, clients,
               and communities. Outside of work, I spend time mentoring, engaging
@@ -68,31 +54,33 @@ const Life = () => {
               status quo. These moments keep my mind open and my approach to
               leadership grounded in empathy and understanding.
             </motion.p>
+            <div className="flex pl-2 sm:pl-20">
+              <KnowMoreButton onClick={() => navigate("life")} />
+            </div>
           </div>
         </motion.div>
 
-        <motion.img
+        {/* <motion.img
           src="lifeimage.png"
           alt=""
           className="w-[600px] mx-auto"
-          variants={sectionVariants}
-        />
+          {...fadeInUp}
+        /> */}
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         className="sm:px-20 px-2 sm:-mt-20"
-        variants={container}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.05 }}
       >
-        <motion.div variants={fadeUp}>
+        <motion.div {...fadeInUp}>
           <Facts />
         </motion.div>
-        <motion.div variants={fadeUp}>
+        <motion.div {...fadeInUp}>
           <Hobbies />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };

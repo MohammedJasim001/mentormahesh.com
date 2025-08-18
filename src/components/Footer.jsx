@@ -8,6 +8,28 @@ import {
 } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { MdLocationOn, MdOutlineMailOutline } from "react-icons/md";
+import { motion } from "framer-motion";
+import Youtube from "../components/home/Youtube";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
+  transition: { duration: 0.4, ease: "easeInOut" },
+};
+
+const fadeInDown = {
+  initial: { opacity: 0, y: -30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
+  transition: { duration: 0.4, ease: "easeInOut" },
+};
+
+const MotionText = ({ children, className, down = false }) => (
+  <motion.div className={className} {...(down ? fadeInDown : fadeInUp)}>
+    {children}
+  </motion.div>
+);
 
 const Footer = () => {
   const form = useRef();
@@ -33,23 +55,28 @@ const Footer = () => {
         }
       );
   };
+
   return (
-    <div className="pt-14">
+    <motion.div className="pt-14" >
       <div className="lg:flex mt-10 lg:px-16 lg:space-x-20">
         <div className="lg:w-1/2 space-y-5 lg:px-10 px-5">
-          <h1 className="text-[#FF7438] text-4xl lg:text-6xl font-bold">
-            GET IN TOUCH WITH ME
-          </h1>
-          <p className="font-imprima text-xl font-semibold">
+          {/* <MotionText className="font-imprima text-xl font-semibold">
             Whether you’re looking for a mentor, career counselling, resume and
             portfolio management, or just want to say hi and vibe on music— I’d
             love to hear from you.
-          </p>
-          <p className="font-imprima text-xl font-semibold">
+          </MotionText> */}
+          <MotionText className="font-imprima text-xl font-semibold">
             This isn’t just a contact section. It’s where new conversations
             begin, new ideas take shape, and sometimes, new paths open.
-          </p>
-          <img src="contact.png" alt="" className="w-[420px]" />
+          </MotionText>
+          <div className="flex items-center justify-center">
+            <motion.img
+            src="contact.png"
+            alt=""
+            className="w-[200px] sm:w-[280px]"
+            {...fadeInUp}
+          />
+          </div>
         </div>
         <div className=" lg:w-1/2 px-4 lg:px-10 space-y-16">
           <form
@@ -57,7 +84,7 @@ const Footer = () => {
             ref={form}
             onSubmit={sendEmail}
           >
-            <div className="flex flex-col space-y-3">
+            <motion.div className="flex flex-col space-y-3" {...fadeInUp}>
               <label htmlFor="name" className="font-medium text-gray-700">
                 Name
               </label>
@@ -69,9 +96,9 @@ const Footer = () => {
                 placeholder="Your Name"
                 className="border border-black rounded-lg p-3 focus:outline-none focus:border-[#FF7438] focus:ring-1 focus:ring-[#FF7438]"
               />
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col space-y-3">
+            <motion.div className="flex flex-col space-y-3" {...fadeInUp}>
               <label htmlFor="email" className="font-medium text-gray-700">
                 Email
               </label>
@@ -83,9 +110,9 @@ const Footer = () => {
                 placeholder="Your Email"
                 className="border border-black rounded-lg p-3 focus:outline-none focus:border-[#FF7438] focus:ring-1 focus:ring-[#FF7438]"
               />
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col space-y-3">
+            <motion.div className="flex flex-col space-y-3" {...fadeInUp}>
               <label htmlFor="message" className="font-medium text-gray-700">
                 Message
               </label>
@@ -98,31 +125,35 @@ const Footer = () => {
                 className="border border-black rounded-lg p-3 resize-none focus:outline-none focus:border-[#FF7438] focus:ring-1 focus:ring-[#FF7438]"
               ></textarea>
               <input type="hidden" name="to_name" value="Mahesh" />
-            </div>
+            </motion.div>
 
-            <button
+            <motion.button
               type="submit"
               className="bg-[#FF7438] text-white font-semibold py-3 rounded-lg hover:bg-[#e15f2d] transition duration-300"
+              {...fadeInUp}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
             >
               Submit
-            </button>
+            </motion.button>
           </form>
           <div className="space-y-3 font-imprima">
-            <div className="flex items-center space-x-2">
+            <MotionText className="flex items-center space-x-2">
               <IoCall className="text-[#FF7438] text-2xl" />
               <p className="font-bold">+91 9036033300</p>
-            </div>
-            <div className="flex items-center space-x-2">
+            </MotionText>
+            <MotionText className="flex items-center space-x-2">
               <MdOutlineMailOutline className="text-[#FF7438] text-2xl" />
               <p className="font-bold">metalmahesh@gmail.com</p>
-            </div>
-            <div className="flex items-center space-x-2">
+            </MotionText>
+            <MotionText className="flex items-center space-x-2">
               <MdLocationOn className="text-[#FF7438] text-2xl" />
               <p className="font-bold">Bangaluru, India</p>
-            </div>
+            </MotionText>
           </div>
         </div>
       </div>
+        <Youtube />
       <div className="w-full flex justify-center mt-3 space-x-10 bg-white h-20 items-center">
         <hr className="border-t-4 border-[#8D8080] my-4 w-1/6" />
         <h1 className="text-lg text-[#FF7438] font-imprima ">Copyright@2025</h1>
@@ -158,7 +189,7 @@ const Footer = () => {
         </div>
         <hr className="border-t-4 border-[#8D8080] my-4 w-1/6" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,13 +1,11 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import Footer from "./components/Footer";
+import Brands from "./components/work/Brands";
+import Facts from "./components/life/Facts";
+import Musicions from "./components/music/Musicions";
 
 const Home = lazy(() => import("./pages/Home"));
-const Life = lazy(() => import("./pages/Life"));
-const Work = lazy(() => import("./pages/Work"));
-const Music = lazy(() => import("./pages/Music"));
-const Services = lazy(() => import("./pages/Services"));
 
 const AppRouter = () => {
   return (
@@ -16,13 +14,12 @@ const AppRouter = () => {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="life" element={<Life />} />
-          <Route path="work" element={<Work />} />
-          <Route path="music" element={<Music />} />
-          <Route path="services" element={<Services />} />
+          <Route path="life" element={<Facts />} />
+          <Route path="work" element={<Brands />} />
+          <Route path="music" element={<Musicions />} />
+          {/* <Route path="services" element={<Services />} /> */}
         </Routes>
       </Suspense>
-      <Footer />
     </>
   );
 };

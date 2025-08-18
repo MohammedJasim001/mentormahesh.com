@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import Brands from "../components/work/Brands";
 import { WORK } from "../constant/Work";
+import KnowMoreButton from "../components/KnowMoreButton";
+import { useNavigate } from "react-router-dom";
 
 const Work = () => {
+  const navigate = useNavigate();
   return (
     <div className="sm:p-8 p-2 pt-12 lg:px-20 space-y-10" id="work">
       <motion.img
@@ -39,27 +42,21 @@ const Work = () => {
 
             <div className="border-l-2 hidden md:block h-[300px] bg-black"></div>
 
-            <div className="sm:w-1/2 flex items-center justify-center">
+            <div className="sm:w-1/2 flex  space-y-5 flex-col items-center justify-center">
               <p className="text-lg sm:text-xl font-semibold font-imprima">
                 {ele.description}
               </p>
+              {ind === WORK.length - 1 && (
+                <div className="flex w-full">
+                  <KnowMoreButton onClick={() => navigate("work")} />
+                </div>
+              )}
             </div>
           </motion.div>
         ))}
       </div>
 
-      <motion.h1
-        className=" text-3xl md:text-5xl lg:ml-20 lg:w-xl lg:text-6xl text-[#FF7438] font-bold "
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -30 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: false }}
-      >
-        BRANDS I HAVE CREATED!
-      </motion.h1>
-  
-      <Brands />
+      {/* <Brands /> */}
     </div>
   );
 };

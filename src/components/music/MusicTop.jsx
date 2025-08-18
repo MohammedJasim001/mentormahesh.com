@@ -1,65 +1,82 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import KnowMoreButton from "../KnowMoreButton";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.4, // delay between each child animation
-    },
-  },
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
+  transition: { duration: 0.4, ease: "easeInOut" },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
+const fadeText = {
+  initial: { opacity: 0, y: -30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
+  transition: { duration: 0.4, ease: "easeInOut" },
 };
+
+const MotionImg = ({ src, alt, className }) => (
+  <motion.img src={src} alt={alt} className={className} {...fadeInUp} />
+);
+
+const MotionDiv = ({ children, className }) => (
+  <motion.div className={className} {...fadeInUp}>
+    {children}
+  </motion.div>
+);
 
 const MusicTop = () => {
+  const navigate = useNavigate();
   return (
-    <motion.div
-      className="flex flex-col lg:flex-row items-center md:px-12 lg:px-32 justify-between"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.div className="lg:space-y-10" variants={itemVariants}>
-        <motion.img src="music.png" alt="" className="w-96" variants={itemVariants} />
-        <motion.img src="music_band.png" alt="" className="block lg:hidden" variants={itemVariants} />
+    <motion.div className="flex flex-col lg:flex-row items-center md:px-12 lg:px-20 justify-between">
+      <div className="lg:space-y-10">
+        <MotionImg src="music.png" alt="" className="w-96" />
+        <MotionImg src="music_band.png" alt="" className="block lg:hidden" />
 
-        <motion.div className="lg:hidden flex justify-between" variants={itemVariants}>
-          <motion.img src="icon1.png" alt="" className="w-36" variants={itemVariants} />
-          <motion.img src="90s.png" alt="" className="w-36" variants={itemVariants} />
-        </motion.div>
+        <MotionDiv className="lg:hidden flex justify-between">
+          <MotionImg src="icon1.png" alt="" className="w-36" />
+          <MotionImg src="90s.png" alt="" className="w-36" />
+        </MotionDiv>
 
-        <motion.div
-          className="mt-10 px-4 sm:px-0 sm:ml-5 max-w-[530px] space-y-4"
-          variants={itemVariants}
-        >
-          <h1 className="text-3xl md:text-5xl lg:text-6xl text-[#FF7438] font-bold">
+        <MotionDiv className="mt-10 px-4 sm:px-0 sm:ml-5 max-w-[530px] space-y-4">
+          <motion.h1
+            className="text-3xl md:text-5xl lg:text-6xl text-[#FF7438] font-bold"
+            {...fadeText}
+          >
             WELCOME TO MY MUSIC COLLECTION!
-          </h1>
-          <p className="text-xl font-semibold font-imprima">
+          </motion.h1>
+          <motion.p
+            className="text-xl font-semibold font-imprima"
+            {...fadeText}
+          >
             I've always been someone who derives my grit and inspiration from
             music, especially Metal music and Rock music from the 70’s, 80s and
             90s. With my ventures right now, I am trying to pass on the same to
             everyone between the ages of 5 to 55 through stories and
             illustrations.
-          </p>
-        </motion.div>
+          </motion.p>
+          <div className="flex ">
+            <KnowMoreButton onClick={() => navigate("music")} />
+          </div>
+        </MotionDiv>
 
-        <motion.div className="hidden lg:flex justify-between" variants={itemVariants}>
-          <motion.img src="icon1.png" alt="" className="w-36" variants={itemVariants} />
-          <motion.img src="90s.png" alt="" className="w-36" variants={itemVariants} />
-        </motion.div>
-      </motion.div>
+        <MotionDiv className="hidden lg:flex justify-between">
+          <MotionImg src="icon1.png" alt="" className="w-36" />
+          <MotionImg src="90s.png" alt="" className="w-36" />
+        </MotionDiv>
+      </div>
 
-      <motion.img src="icon2.png" alt="" className="w-36 -mt-10 hidden lg:block" variants={itemVariants} />
-      <motion.img src="music_band.png" alt="" className="w-[500px] hidden lg:block" variants={itemVariants} />
+      <MotionImg
+        src="icon2.png"
+        alt=""
+        className="w-36 -mt-10 hidden lg:block"
+      />
+      <MotionImg
+        src="music_band.png"
+        alt=""
+        className="w-[500px] hidden lg:block"
+      />
     </motion.div>
   );
 };
