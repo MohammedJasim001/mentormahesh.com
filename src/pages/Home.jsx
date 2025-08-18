@@ -26,6 +26,7 @@ const Home = () => {
         src="YOUTUBE_INTRO.mp4"
         autoPlay
         loop
+        muted
         playsInline
         webkit-playsinline
       />
