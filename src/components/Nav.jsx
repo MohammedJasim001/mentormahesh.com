@@ -38,13 +38,19 @@ const Nav = () => {
         showNav ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 lg:pr-20">
         <div className="flex justify-between items-center h-16">
-          <div></div>
+          <div className="text-orange-500">
+            <h3 className="text-2xl font-bold">MENTOR MAHESH</h3>
+            <p className="text-xs">BANGALORE, INDIA</p>
+          </div>
 
           <div className="hidden md:flex space-x-8 text-lg font-semibold">
             <a href="/" className="hover:text-orange-500 transition">
               Home
+            </a>
+            <a href="#workshops" className="hover:text-orange-500 transition">
+              Workshops
             </a>
             <a href="#work" className="hover:text-orange-500 transition">
               Work

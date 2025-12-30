@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Brands from "../components/work/Brands";
 import { WORK } from "../constant/Work";
 import KnowMoreButton from "../components/KnowMoreButton";
 import { useNavigate } from "react-router-dom";
