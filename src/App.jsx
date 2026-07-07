@@ -2,7 +2,6 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import BrandBar from "./components/BrandBar";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
 
 import Contact from "./pages/Contact";
 import Creations from "./pages/Creations";
@@ -19,14 +18,11 @@ import AppRouter from "./routes";
 function App() {
   return (
     <BrowserRouter>
-      <AppRouter />
       <div className="bg-[#FFFDE7]">
-        <Navbar />
-        <Home />
-        <Workshops />
-        <Lifestyle />
-        <Creations />
-        <Footer />
+        <AppRouter />
+
+        {/* <Home /> */}
+
         {/* <BrandBar /> */}
         {/* <Path />
       <Hobbies />

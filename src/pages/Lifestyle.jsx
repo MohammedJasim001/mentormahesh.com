@@ -49,7 +49,7 @@ const Lifestyle = () => {
             bg: "#60b010",
             href: "/work",
             description:
-              "Discover the joy of humor through storytelling, improvisation, and interactive performances.",
+              "Explore my professional journey, leadership roles, and the milestones that have shaped my career.",
           },
           {
             src: "/life.png",
@@ -57,7 +57,7 @@ const Lifestyle = () => {
             bg: "#D4AF37",
             href: "/life",
             description:
-              "A creative art workshop that nurtures imagination through drawing, painting, and hands-on activities.",
+              "A glimpse into my passions, experiences, values, and the moments that inspire me beyond work.",
           },
           {
             src: "/music.png",
@@ -65,7 +65,7 @@ const Lifestyle = () => {
             bg: "#6aa4e8",
             href: "/music",
             description:
-              "Learn storytelling techniques and build confidence through engaging narrative exercises.",
+              "Music has always been a source of inspiration, creativity, and expression throughout my journey.",
           },
         ].map((item, index) => (
           <motion.div
@@ -82,16 +82,16 @@ const Lifestyle = () => {
               <motion.img
                 src={item.src}
                 alt={item.title}
-                className="w-full h-44 object-contain"
+                className="w-full h-32 object-contain"
                 whileHover={{ scale: 1.08 }}
               />
             </div>
 
             <div className="flex-1 p-6 flex flex-col justify-between text-white">
               <div>
-                <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
+                {/* <h3 className="text-2xl font-bold mb-3">{item.title}</h3> */}
 
-                <p className="text-sm leading-7 opacity-95">
+                <p className="text- leading-7 opacity-95">
                   {item.description}
                 </p>
               </div>

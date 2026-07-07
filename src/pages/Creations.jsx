@@ -8,7 +8,7 @@ const creations = [
     bg: "#FFE6DA",
     href: "https://mentoons.com/",
     description:
-      "A storytelling platform designed to inspire, educate, and entertain through creative visual experiences.",
+      " We're on a mission to help children and families rediscover balance—between digital play and real-life values.",
   },
   {
     src: "/mythos.png",
@@ -16,7 +16,7 @@ const creations = [
     bg: "#F3E8FF",
     href: "https://mentoonsmythos.com/",
     description:
-      "Stories inspired by mythology, culture, and values that connect generations through meaningful narratives.",
+      "Mentoons Mythos is an initiative that explores the connection between mythology, human psychology, and storytelling.",
   },
   {
     src: "/cxo.png",
@@ -32,7 +32,7 @@ const creations = [
     bg: "#DCFCE7",
     href: "https://www.activelisteners.in/",
     description:
-      "Interactive storytelling sessions that develop communication, listening and collaboration.",
+      "From music and art therapy to engaging games and comics, we create safe, fun, and supportive environments to foster communication, understanding, and healing.",
   },
   {
     src: "/toonland.png",
@@ -40,7 +40,7 @@ const creations = [
     bg: "#DBEAFE",
     href: "https://toonland.in/",
     description:
-      "Creative learning experiences that encourage imagination through drawing and storytelling.",
+      "Toonland is a land of mentoons characters, where children can explore stories, games, and activities that spark their imagination and creativity.",
   },
   {
     src: "/ps.png",
@@ -54,7 +54,7 @@ const creations = [
 
 const Creations = () => {
   return (
-    <section id="creations" className="py-24 px-6 lg:px-20 ">
+    <section id="creations" className="py-16 px-6 lg:px-20 ">
       {/* Header */}
       <div className="text-center px-5 mb-16">
         <motion.h2
@@ -117,7 +117,7 @@ const Creations = () => {
             </div>
 
             {/* Content */}
-            <div className="p-8">
+            <div className="p-8 ">
               <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
 
               <p className="mt-4 text-gray-600 leading-7">{item.description}</p>

@@ -81,6 +81,13 @@ const Nav = () => {
               {/* <BiDetail /> */}
               Lifestyle
             </a>
+             <a
+              href="#creations"
+              className="hover:text-orange-500 transition flex items-center gap-1"
+            >
+              {/* <BiDetail /> */}
+              Creations
+            </a>
             <a
               href="#contact"
               className="hover:text-orange-500 transition flex items-center gap-1"
